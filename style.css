@@ -1,6 +1,9 @@
+body { 
+    white-space: pre-line;
+}
 
 .container {
-    width: 500px;
+    width: 900px;
     height: 300px;
     margin: 0 auto ;
     font-size: 36pt;
