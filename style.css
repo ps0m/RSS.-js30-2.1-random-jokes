@@ -19,8 +19,12 @@ body {
 
 .main_screen{
     width: 100%;
+    margin: 0 auto; 
     position: relative;
+}
 
+.image {
+    margin: 0 auto;
 }
 
 .imor {
@@ -47,9 +51,6 @@ body {
     text-align: center;
     animation: opacity 5s forwards;
 }
-
-
-
 @keyframes opacity {
     0%    { opacity: 0; }
   100%  { opacity: 1; }
@@ -122,6 +123,7 @@ body {
 
 
 a {
+    color: #000;
     text-decoration: none;
 }
 
@@ -131,6 +133,6 @@ a {
 }
 
 a:hover, a:focus, a:active {
-    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
-    contrast(87%);
+    color: #c4c2c2;
+    transition: 2s;
 }

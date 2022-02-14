@@ -49,8 +49,12 @@ async function getPhoto() {
     let urlPhoto;
     if (language == "en") {
         urlPhoto = `https://api.unsplash.com/search/photos?query=+${person}+&orientation=landscape&client_id=D1EM9wlZ6FvGjeCfS61tB4jNnFalrgFm_4j_quY7Vto`;
+        buttonStart.textContent = "New Quote!";
+        buttonLanguage.textContent = "Let`s Belarus!";
     } else if (language === "by") {
         urlPhoto = `https://raw.githubusercontent.com/ps0m/Quote-JSON/main/Photo.json`;
+        buttonStart.textContent = "Новая цытата!";
+        buttonLanguage.textContent = "Па-ангельску!";
     }
     
     const res = await fetch(urlPhoto);
