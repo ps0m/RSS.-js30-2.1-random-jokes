@@ -19,11 +19,15 @@ async function getData() {
     if (language == "en") {
         url = 'https://raw.githubusercontent.com/ps0m/Quote-JSON/main/input.json';
     } else if (language === "by") {
-        url = 'https://raw.githubusercontent.com/ps0m/file-storage/random-jokes/belarusian_quotes.json'
+        url = 'https://raw.githubusercontent.com/ps0m/Quote-JSON/main/belarusian_quotes.json'
     }
-    const res = await fetch(url);
-    const data = await res.json();
-    showData (data);
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        showData (data);
+    } catch (err) {
+        console.log("Error:"+(err));
+    } finally {};
 }
 
 getData();
@@ -36,11 +40,10 @@ function showData (data) {
     }
 
     person = data[n].author;
-    paragraph.textContent = `${data[n].text}`; 
+    paragraph.textContent = `${data[n].text}`;
     paragraphAuthor.textContent = `${data[n].author}`; 
     paragraph.classList.remove ('paragraph');
     paragraphAuthor.classList.remove ('paragraph_author');
-
 };
 
 // get Photo
@@ -52,14 +55,18 @@ async function getPhoto() {
         buttonStart.textContent = "New Quote!";
         buttonLanguage.textContent = "Let`s Belarus!";
     } else if (language === "by") {
-        urlPhoto = `https://raw.githubusercontent.com/ps0m/Quote-JSON/main/Photo.json`;
+        urlPhoto = `https://raw.githubusercontent.com/ps0m/Quote-JSON/main/PhotoBelar.json`;
         buttonStart.textContent = "Новая цытата!";
         buttonLanguage.textContent = "Па-ангельску!";
     }
-    
-    const res = await fetch(urlPhoto);
-    const data = await res.json();
-    showPhoto (data);
+    try {
+        const res = await fetch(urlPhoto);
+        const data = await res.json();
+        showPhoto (data);
+    } catch (err) {
+        console.log("Error:"+(err));
+    } finally {};
+
 }
 setTimeout (getPhoto, 300);
 
