@@ -21,8 +21,10 @@ body {
 }
 
 .main_screen{
+    display: table-row;
     width: 100%;
-    flex: 1 0 auto;
+    height: 100%;
+    /* flex-grow: 1; */
     position: relative;
     top: 2vw;
 }
@@ -111,24 +113,36 @@ body {
 
 
 .footer {
-    max-width: 1440px;
-    width: 100%;
+    max-width: 1400px;
     height: 150px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
     display: flex;
+    /* flex-shrink: 0; */
     justify-content: space-between;
     align-items: center;
     color: #000;
-    margin: 0 auto;
+    margin: 20px auto;
+}
+
+.div_footer{
+    margin-right: 20px;
 }
 
 a {
     color: #000;
     text-decoration: none;
+
 }
 
 .footer_link {
     display: block;
     text-decoration: none;
+    margin-right: 20px;
+
 }
 
 a:hover, a:focus, a:active {
