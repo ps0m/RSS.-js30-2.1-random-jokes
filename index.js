@@ -8,18 +8,19 @@ let paragraph = document.querySelector ('.paragraph');
 let buttonStart = document.querySelector ('.start');
 let buttonLanguage = document.querySelector ('.language');
 let container = document.querySelector ('.container');
-let imor = document.querySelector ('.imor');
-let paragraphAuthor = document.querySelector ('.paragraph_author')
+let paragraphAuthor = document.querySelector ('.paragraph_author');
+
 
 
 // get Quote 
 
+
 async function getData() {
     let url;
     if (language == "en") {
-        url = 'https://raw.githubusercontent.com/ps0m/Quote-JSON/main/input.json';
+        url = 'https://raw.githubusercontent.com/ps0m/RandomQuotes/jokes/accets/json/EnglishQuotes.json';
     } else if (language === "by") {
-        url = 'https://raw.githubusercontent.com/ps0m/Quote-JSON/main/belarusian_quotes.json'
+        url = 'https://raw.githubusercontent.com/ps0m/RandomQuotes/jokes/accets/json/Belarus_quotes.json'
     }
     try {
         const res = await fetch(url);
@@ -54,8 +55,10 @@ async function getPhoto() {
         urlPhoto = `https://api.unsplash.com/search/photos?query=+${person}+&orientation=landscape&client_id=D1EM9wlZ6FvGjeCfS61tB4jNnFalrgFm_4j_quY7Vto`;
         buttonStart.textContent = "New Quote!";
         buttonLanguage.textContent = "Let`s Belarus!";
+
+
     } else if (language === "by") {
-        urlPhoto = `https://raw.githubusercontent.com/ps0m/Quote-JSON/main/PhotoBelar.json`;
+        urlPhoto = `https://raw.githubusercontent.com/ps0m/RandomQuotes/jokes/accets/json/PhotoBelarus.json`;
         buttonStart.textContent = "Новая цытата!";
         buttonLanguage.textContent = "Па-ангельску!";
     }
@@ -101,5 +104,7 @@ function changeLanguage () {
 buttonStart.addEventListener ('click',() => setTimeout(getPhoto, 300));
 buttonStart.addEventListener ('click', getData);
 buttonLanguage.addEventListener ('click', changeLanguage);
+
+
 
 
